@@ -7,7 +7,7 @@ body {
 
 #header {
 
-    background-image: url("http://localhost:8080/CookingBook/decorators/img/header.jpg");
+    background-image: url("http://localhost:8080/CookingBookV2/decorators/img/header.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     height: 219px;
@@ -32,7 +32,7 @@ main {
     float: left;
     width: 230px;
     margin-left: -100%;
-    background-image: url("http://localhost:8080/CookingBook/decorators/img/nawigacja.png");
+    background-image: url("http://localhost:8080/CookingBookV2/decorators/img/nawigacja.png");
 
 }
 
@@ -44,7 +44,7 @@ main {
     height: 245px;
     margin-left: -100%;
     background-repeat: no-repeat;
-    background-image: url("http://localhost:8080/CookingBook/decorators/img/ramka.jpg");
+    background-image: url("http://localhost:8080/CookingBookV2/decorators/img/ramka.jpg");
 
 }
 
@@ -52,7 +52,7 @@ main {
     clear: left;
     width: 100%;
     height: 35px;
-    background-image: url("http://localhost:8080/CookingBook/decorators/img/footer.png");
+    background-image: url("http://localhost:8080/CookingBookV2/decorators/img/footer.png");
     background-repeat: repeat-x;
     text-align: center;
     padding: 0px 0;
@@ -94,7 +94,7 @@ nav ul {
 nav ul a {
     color: white;
     font-size: 16px;
-    background-image: url("http://localhost:8080/CookingBook/decorators/img/highlight.png");
+    background-image: url("http://localhost:8080/CookingBookV2/decorators/img/highlight.png");
     /*  background-size: 160%; */
     text-decoration: none;
 }                       
