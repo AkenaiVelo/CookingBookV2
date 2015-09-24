@@ -45,4 +45,9 @@ public class AccountViewDAO {
             return false;
         }
     }
+    
+    public EngineAccount getAccountByLogin(String login)
+    {
+        return em.find(EngineAccount.class, login);
+    }
 }

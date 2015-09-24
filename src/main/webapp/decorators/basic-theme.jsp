@@ -2,6 +2,7 @@
 
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="decorator" %>
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -63,10 +64,13 @@
                         </nav>
 
                         <login id="login">
+                            <%
+                                if ((session.getAttribute("login") == null) || (session.getAttribute("login") == "")) {
+                            %>
                             <div class="loginmargin">
 
                                 <h3>Zaloguj sie:</h3>
-                                <form action="action_page.php">
+                                <form method="post" action="login.jsp">
 
                                     <input type="text" name="login" placeholder="login" style="width: 100px;" >
                                         <br>                                                
@@ -77,6 +81,13 @@
                                                             <br><br>     <img src="${pageContext.request.contextPath}/decorators/img/register.png">
 
                                                                         </div>
+                                                            <% } else {
+                                 %>
+                                    <div>
+                                        Witaj, <%=session.getAttribute("login")%> <br>
+                                            <a href='logout.jsp'>Wyloguj</a>
+                                    </div>
+                                            <% } %>
                                                                         </login>
 
                                                                         </div>
