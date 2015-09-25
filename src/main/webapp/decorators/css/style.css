@@ -4,7 +4,18 @@ body {
     font-family: Sans-Serif;
     line-height: 1.5em;
 }
+table {
+    background:bisque; 
+       vertical-align: top;
+   font-weight: bold;
+   color: darkred;
+      }
 
+      table tbody tr td {
+        border:outset;
+        
+        padding:15px;
+      }
 #header {
 
     background-image: url("http://localhost:8080/CookingBookV2/decorators/img/header.jpg");

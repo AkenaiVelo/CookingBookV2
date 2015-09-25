@@ -1,9 +1,3 @@
-<%-- 
-    Document   : register
-    Created on : 2015-09-18, 01:02:32
-    Author     : byakuya
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,6 +5,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration</title>
     </head>
+
+   
+
+<%--  KOMENTARZ --%>
     <body>
         <h1>Wypełnij formularz rejestracyjny</h1>
         </br>
@@ -19,6 +17,7 @@
             Password:<input type="text" name="PasswordField" />
             <input type="submit" name="LogIn" value="Register" />
         </form>
-            <h2>${komunikat}</h2>
+        <h2>${komunikat}</h2>    
+
     </body>
 </html>

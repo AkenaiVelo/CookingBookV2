@@ -39,8 +39,8 @@
                                 <h3>Left heading</h3>
                                 <ul>
                                     <li><a href="${pageContext.servletContext.contextPath}">HOME</a></li>
-                                    <li><a href="${pageContext.servletContext.contextPath}/register.jsp">Register</a></li>
-                                    <li><a href="#">Link c</a></li>
+                                     <li><a href="${pageContext.servletContext.contextPath}/personsViewPage.jsp">Persons</a></li>
+                                    <li><a href="#">Link 3</a></li>                                  
                                     <li><a href="#">Link 4</a></li>
                                     <li><a href="#">Link 5</a></li>
                                 </ul>
@@ -78,7 +78,7 @@
                                                 <br><br>
                                                         <input type="submit" value="Wyslij!" style="width: 100px;">
                                                             </form>
-                                                            <br><br>     <img src="${pageContext.request.contextPath}/decorators/img/register.png">
+                                                            <br><br><a href="register.jsp"><img src="${pageContext.request.contextPath}/decorators/img/register.png">
 
                                                                         </div>
                                                             <% } else {
