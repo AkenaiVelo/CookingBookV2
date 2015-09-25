@@ -5,6 +5,7 @@ import com.cookbook.DAO.AccountViewDAO;
 import com.cookbook.DAO.AddressChangeDAO;
 import com.cookbook.DTO.AccountDTO;
 import com.cookbook.ENGINE.EngineAccount;
+import com.cookbook.Other.MD5Hash;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -40,7 +41,7 @@ public class AccountService {
     {
         EngineAccount temp = account_view_dao.getAccountByLogin(login);
         
-        if(password.equals(temp.getPassword()))
+        if(MD5Hash.getmd5(password).equals(temp.getPassword()))
                 {
                     return true;
                 }

@@ -1,6 +1,7 @@
 package com.cookbook.Controller;
 
 import com.cookbook.DTO.AccountDTO;
+import com.cookbook.Other.MD5Hash;
 import com.cookbook.Service.AccountService;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,7 @@ public class RegisterController {
          {
              if(logInCheck())
              {
-                if(baza.registerNewAccount(new AccountDTO(login, password)))
+                if(baza.registerNewAccount(new AccountDTO(login, MD5Hash.getmd5(password))))
                 {
                     komunikat="Rejestracja udana. Mozesz terz dokonac logowania.";
                 }else
