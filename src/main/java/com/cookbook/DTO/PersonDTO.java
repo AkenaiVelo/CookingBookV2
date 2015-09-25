@@ -7,9 +7,11 @@ public class PersonDTO {
     private Integer personId;
     private String firstname;
     private String surname;
-    private ArrayList<String> addressList;
 
     public PersonDTO(EnginePersons e) {
+        personId=e.getPersonId();
+        firstname=e.getFirstname();
+        surname=e.getSurname();
     }
 
     public Integer getPersonId() {
@@ -34,13 +36,5 @@ public class PersonDTO {
 
     public void setSurname(String surname) {
         this.surname = surname;
-    }
-
-    public ArrayList<String> getAddressList() {
-        return addressList;
-    }
-
-    public void setAddressList(ArrayList<String> addressList) {
-        this.addressList = addressList;
     }
 }
