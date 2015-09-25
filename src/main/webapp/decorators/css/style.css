@@ -93,6 +93,13 @@ p {
     color: #ffffff;
 }
 
+.logoutmargin {
+    color: #ffffff;
+    font-size: 16pt;
+  
+   text-align: center;
+}
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -108,4 +115,4 @@ nav ul a {
     background-image: url("http://localhost:8080/CookingBookV2/decorators/img/highlight.png");
     /*  background-size: 160%; */
     text-decoration: none;
-}                       
+}

@@ -83,10 +83,10 @@
                                                                         </div>
                                                             <% } else {
                                  %>
-                                    <div>
-                                        Witaj, <%=session.getAttribute("login")%> <br>
-                                            <a href='logout.jsp'>Wyloguj</a>
-                                    </div>
+                                   
+                                 <div class="logoutmargin"> <br><br><br><br>Witaj,<br><%=session.getAttribute("login")%> <br>
+                                                             <br> <a href="logout.jsp"><img src="${pageContext.request.contextPath}/decorators/img/logout.png">
+
                                             <% } %>
                                                                         </login>
 
