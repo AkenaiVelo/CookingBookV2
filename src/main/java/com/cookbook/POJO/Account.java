@@ -1,6 +1,5 @@
 package com.cookbook.POJO;
 
-import com.cookbook.DTO.AccountDTO;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Id;
