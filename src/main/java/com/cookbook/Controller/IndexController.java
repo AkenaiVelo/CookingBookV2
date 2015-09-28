@@ -3,6 +3,9 @@ package com.cookbook.Controller;
 import com.cookbook.DAO.AccountViewDAO;
 import com.cookbook.DAO.AddressViewDAO;
 import com.cookbook.DAO.PersonViewDAO;
+import com.cookbook.Service.AccountService;
+import com.cookbook.Service.AddressService;
+import com.cookbook.Service.PersonService;
 //import com.cookbook.Other.Loger;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class IndexController {
+    
+    @Autowired
+    private PersonService personService;
+    @Autowired
+    private AccountService accountService;
+    @Autowired
+    private AddressService addressService;
 
     @Autowired
     private PersonViewDAO personViewDAO;
@@ -26,18 +36,10 @@ public class IndexController {
         m.addAttribute("personViewDAO", personViewDAO);
         m.addAttribute("addressViewDAO", addressViewDAO);
         m.addAttribute("accountViewDAO", accountViewDAO);
+        m.addAttribute("personService", personService);
+        m.addAttribute("accountService", accountService);
+        m.addAttribute("addressService", addressService);
         m.addAttribute("pas", "przeslanie");
-       
-        String button1 = request.getParameter("button");
-        if (button1 != null) {
-            return "/register.jsp";
-        }
-        //Loger.logger.error("Index Controler");
-        /*
-         String name = request.getParameter("name");
-         if (name != null)
-         guestDao.persist(new Guest(name));
-         */
       
         return "index.jsp";
     }

@@ -27,4 +27,9 @@ public class PersonService {
         EnginePersons tmp=new EnginePersons(e.getPersonId(), e.getFirstname(), e.getSurname(),null);
         return bazaIn.AddPerson(tmp);
     }
+    
+    public PersonDTO getPersonById(int id)
+    {
+        return new PersonDTO(bazaOut.getPersonById(id));
+    }
 }

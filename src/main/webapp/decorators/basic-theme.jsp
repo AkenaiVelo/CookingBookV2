@@ -76,7 +76,7 @@
                                         <br>                                                
                                             <input type="password" name="password" placeholder="haslo" style="width: 100px;">
                                                 <br><br>
-                                                        <input type="submit" value="Wyslij!" style="width: 100px;">
+                                                        <input type="submit" value="Zaloguj!" style="width: 100px;">
                                                             </form>
                                                             <br><br><a href="register.jsp"><img src="${pageContext.request.contextPath}/decorators/img/register.png">
 

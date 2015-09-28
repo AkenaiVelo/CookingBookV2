@@ -1,7 +1,6 @@
 package com.cookbook.DTO;
 
 import com.cookbook.ENGINE.EnginePersons;
-import java.util.ArrayList;
 
 public class PersonDTO {
     private Integer personId;
@@ -12,6 +11,9 @@ public class PersonDTO {
         personId=e.getPersonId();
         firstname=e.getFirstname();
         surname=e.getSurname();
+    }
+
+    public PersonDTO() {
     }
 
     public Integer getPersonId() {
