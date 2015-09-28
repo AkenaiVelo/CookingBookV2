@@ -15,22 +15,28 @@ public class EngineAccount extends Account {
     public EngineAccount() {
     }
 
-    public EngineAccount(AccountDTO e) {
-        super(e);
+    public EngineAccount(String login, String password) {
+        super(login, password);
     }
 
     @Override
     public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Account)) {
             return false;
         }
         Account other = (Account) object;
-        if ((this.getLogin() == null && other.getLogin() != null) || (this.getLogin() != null && !this.getLogin().equals(other.getLogin()))) {
-            return false;
-        }
-        return true;
+        return !((!this.getLogin().equals(other.getLogin())) || (!this.getPassword().equals(other.getPassword())));
     }
-
     
+    @Override
+    public int hashCode()//hashcode po pierwszej literce loginu
+    {
+        return Character.getNumericValue(getLogin().charAt(0));
+    }
+    
+    @Override
+    public String toString()
+    {
+        return super.toString();
+    }
 }

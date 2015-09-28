@@ -17,43 +17,40 @@
     </head>
 
     <body>
-
-        <form method="POST" action="index.html">
-            Name: <input type="text" name="name" />
-            <input type="submit" value="Add" />
-        </form>
-
-        <ol> 
-          
-          
+         
+            </br>
             
-            
-            </br></br></br>
-            test
-
+            Persons by id 1
+            </br>
             <%EnginePersons x = personViewDAO.getPersonById(1);%>
             <%= x%>
-            aaaa
-            <br>
-            <br>
-            MaQ - Test pobierania adresow dla Person z id 1
-
+            <hr />
+            
+            Adresy osoby o id 1 Criteria
+            </br>
+            <ol>
             <% for (EngineAddress p : addressViewDAO.CRITERIA_getAddressOfPerson(1)) {%>
             <li> <%= p%> </li>
-                <% } %>    
-            <br>
-            <br>
-            MaQ - Test pobierania loginow z bazy
+                <% } %> 
+             </ol>
+            <hr />
 
+            Adres osoby z pola
+            </br>
+            <ol>
+            <% for (EngineAddress p :x.getAddressList()) {%>
+            <li> <%= p%> </li>
+                <% } %> 
+            </ol>
+            <hr />
+            
+            Konta z bazy
+            </br>
+            <ol>
             <% for (EngineAccount p : accountViewDAO.findAllAccounts()) {%>
             <li> <%= p%> </li>
                 <% }%> 
-
-            <form method="POST" action="index.html">
-
-                <input type="submit" name="button" value="linknowy" />
-            </form>
-
-        </ol>
+            </ol>
+            <hr />
     </body>
 </html>

@@ -15,7 +15,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Address implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
@@ -72,5 +72,11 @@ public class Address implements Serializable {
 
     public void setPersonId(EnginePersons personId) {
         this.personId = personId;
+    }
+    
+    @Override
+    public String toString()
+    {
+       return "Adress id="+addressId+" City="+city+" zipcode="+zipcode; 
     }
 }

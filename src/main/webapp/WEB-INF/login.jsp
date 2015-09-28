@@ -26,6 +26,7 @@
     else
     {
         logged = "Wszystko zle";
+        response.sendRedirect("failure.jsp");
     }
     
     Loger.logger.error(login + "    " + password);

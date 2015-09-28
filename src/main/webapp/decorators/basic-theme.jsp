@@ -27,7 +27,7 @@
                         <main>
                             <div id="content">
                                 <div class="innertube">
-                                    <h1>Heading</h1>
+                                    <h1>CookingBook</h1>
                                     <decorator:body/>
                                 </div>
 

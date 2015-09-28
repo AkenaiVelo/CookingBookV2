@@ -24,6 +24,7 @@ public class PersonService {
     }
 
     public boolean register(PersonDTO e) {
-        return bazaIn.AddPerson(new EnginePersons(e));
+        EnginePersons tmp=new EnginePersons(e.getPersonId(), e.getFirstname(), e.getSurname(),null);
+        return bazaIn.AddPerson(tmp);
     }
 }
