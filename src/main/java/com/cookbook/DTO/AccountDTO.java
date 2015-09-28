@@ -30,7 +30,10 @@ public class AccountDTO {
     
     public AccountDTO(EngineAccount account)
     {
-        
+        login=account.getLogin();
+        password=account.getPassword();
     }
-    
+    public String toString() {
+        return "Login= " + login + " Password= " + password;
+    }
 }

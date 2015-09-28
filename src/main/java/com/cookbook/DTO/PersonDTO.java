@@ -39,4 +39,7 @@ public class PersonDTO {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+     public String toString() {
+        return "FirstName= " + firstname + " Surname= " + surname;
+    }
 }

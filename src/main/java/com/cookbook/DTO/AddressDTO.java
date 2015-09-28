@@ -6,9 +6,11 @@ public class AddressDTO {
     private Integer addressId;
     private String city;
     private String zipcode;
-    private PersonDTO personId;
 
     public AddressDTO(EngineAddress a) { 
+        addressId=a.getAddressId();
+        city=a.getCity();
+        zipcode=a.getZipcode();
     }
     
     public Integer getAddressId() {
@@ -35,11 +37,7 @@ public class AddressDTO {
         this.zipcode = zipcode;
     }
 
-    public PersonDTO getPersonId() {
-        return personId;
-    }
-
-    public void setPersonId(PersonDTO personId) {
-        this.personId = personId;
+     public String toString() {
+        return "City= " + city + " ZipCode= " + zipcode;
     }
 }
