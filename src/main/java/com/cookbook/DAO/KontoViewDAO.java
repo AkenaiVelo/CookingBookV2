@@ -1,7 +1,7 @@
 package com.cookbook.DAO;
 
-import com.cookbook.ENGINE.EngineAccount;
-import com.cookbook.POJO.Account;
+import com.cookbook.ENGINE.EngineKonto;
+import com.cookbook.POJO.Konto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -10,23 +10,20 @@ import javax.persistence.PersistenceException;
 import javax.persistence.Query;
 import org.springframework.stereotype.Component;
 
-/**
- *
- * @author MaQ - a nie zaden podrabianiec!
- */
+
 @Component
-public class AccountViewDAO {
+public class KontoViewDAO {
 
     @PersistenceContext
     private EntityManager em;
 
-    public AccountViewDAO() {
+    public KontoViewDAO() {
     }
 
-    public List<EngineAccount> findAllAccounts() {
-        List<Account> all;
-        List<EngineAccount> all2 = new ArrayList<>();
-        Query query = em.createQuery("SELECT p FROM EngineAccount p");
+    public List<EngineKonto> findAllAccounts() {
+        List<Konto> all;
+        List<EngineKonto> all2 = new ArrayList<>();
+        Query query = em.createQuery("SELECT p FROM EngineKonto p");
         all2 = query.getResultList();
         return all2;
     }
@@ -35,7 +32,7 @@ public class AccountViewDAO {
     {
 
         try {
-            EngineAccount a = em.find(EngineAccount.class, s);
+            EngineKonto a = em.find(EngineKonto.class, s);
             if (a != null) {
                 return true;
             } else {
@@ -46,8 +43,8 @@ public class AccountViewDAO {
         }
     }
     
-    public EngineAccount getAccountByLogin(String login)
+    public EngineKonto getAccountByLogin(String login)
     {
-        return em.find(EngineAccount.class, login);
+        return em.find(EngineKonto.class, login);
     }
 }

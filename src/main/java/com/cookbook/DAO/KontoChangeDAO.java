@@ -1,7 +1,7 @@
 
 package com.cookbook.DAO;
 
-import com.cookbook.ENGINE.EngineAccount;
+import com.cookbook.ENGINE.EngineKonto;
 import com.cookbook.Other.Loger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,19 +13,19 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 
 @Component
-public class AccountChangeDAO {
+public class KontoChangeDAO {
 
     @PersistenceUnit
     private EntityManagerFactory emf;
     
     
 
-    public AccountChangeDAO()
+    public KontoChangeDAO()
     {
         
     }
     @Transactional()
-     public boolean AddAccount(EngineAccount account) {
+     public boolean AddAccount(EngineKonto account) {
         EntityManager em=emf.createEntityManager();
         try {
             System.out.println("Zapisuje "+account);
@@ -41,13 +41,13 @@ public class AccountChangeDAO {
         return true;
     }
     
-    public boolean ChangePassword(EngineAccount ea, String new_password)
+    public boolean ChangePassword(EngineKonto ea, String noew_haslo)
     {
         EntityManager em=emf.createEntityManager();
-        if(ea.getPassword().equals(new_password))
+        if(ea.getHaslo().equals(noew_haslo))
         {
               try {
-          ea.setPassword(new_password);
+          ea.setHaslo(noew_haslo);
             em.persist(ea);
         } catch (PersistenceException p) {
            Loger.logger.error("Nie udalo sie zmienic hasla!");

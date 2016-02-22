@@ -1,11 +1,7 @@
 package com.cookbook.Controller;
 
-import com.cookbook.DAO.AccountViewDAO;
-import com.cookbook.DAO.AddressViewDAO;
-import com.cookbook.DAO.PersonViewDAO;
-import com.cookbook.Service.AccountService;
-import com.cookbook.Service.AddressService;
-import com.cookbook.Service.PersonService;
+import com.cookbook.DAO.KontoViewDAO;
+import com.cookbook.Service.KontoService;
 //import com.cookbook.Other.Loger;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,21 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     
     @Autowired
-    private PersonService personService;
-    @Autowired
-    private AccountService accountService;
-    @Autowired
-    private AddressService addressService;
+    private KontoService kontoService;
 
 
     @RequestMapping(value = "/index")
     public String index(HttpServletRequest request,Model m) {
-          
-        m.addAttribute("personService", personService);
-        m.addAttribute("accountService", accountService);
-        m.addAttribute("addressService", addressService);
+        m.addAttribute("kontoService", kontoService);
         m.addAttribute("pas", "przeslanie");
-      
         return "index.jsp";
     }
 

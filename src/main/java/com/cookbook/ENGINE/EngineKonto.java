@@ -1,7 +1,6 @@
 package com.cookbook.ENGINE;
 
-import com.cookbook.DTO.AccountDTO;
-import com.cookbook.POJO.Account;
+import com.cookbook.POJO.Konto;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -9,23 +8,23 @@ import javax.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@Table(name = "HIBER.ACCOUNT")
-public class EngineAccount extends Account {
+@Table(name = "HIBER.KONTO")
+public class EngineKonto extends Konto {
 
-    public EngineAccount() {
+    public EngineKonto() {
     }
 
-    public EngineAccount(String login, String password) {
+    public EngineKonto(String login, String password) {
         super(login, password);
     }
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Account)) {
+        if (!(object instanceof Konto)) {
             return false;
         }
-        Account other = (Account) object;
-        return !((!this.getLogin().equals(other.getLogin())) || (!this.getPassword().equals(other.getPassword())));
+        Konto other = (Konto) object;
+        return !((!this.getLogin().equals(other.getLogin())) || (!this.getHaslo().equals(other.getHaslo())));
     }
     
     @Override

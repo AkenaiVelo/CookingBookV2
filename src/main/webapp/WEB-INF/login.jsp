@@ -1,7 +1,7 @@
 <%@page import="com.cookbook.Other.Loger"%>
 <%@page import="org.springframework.web.servlet.support.RequestContextUtils"%>
 <%@page import="org.springframework.context.ApplicationContext"%>
-<jsp:useBean id="accountService" type="com.cookbook.Service.AccountService" scope="request" />
+<jsp:useBean id="accountService" type="com.cookbook.Service.KontoService" scope="request" />
 
 <%
     String login = request.getParameter("login");    

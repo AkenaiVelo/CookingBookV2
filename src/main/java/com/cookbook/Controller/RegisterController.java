@@ -1,8 +1,8 @@
 package com.cookbook.Controller;
 
-import com.cookbook.DTO.AccountDTO;
+import com.cookbook.DTO.KontoDTO;
 import com.cookbook.Other.MD5Hash;
-import com.cookbook.Service.AccountService;
+import com.cookbook.Service.KontoService;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegisterController {
     
     String status="Niesprawdzono";
-    String login,password;
+    String login,haslo;
     @Autowired
-    AccountService baza;
+    KontoService baza;
 
     @RequestMapping(value = "/register")
     public String index(HttpServletRequest request,Model m) {
@@ -23,7 +23,7 @@ public class RegisterController {
          String button1 = request.getParameter("statusCheck");
          String button2 = request.getParameter("LogIn");
          login=request.getParameter("LoginField");
-         password=request.getParameter("PasswordField");
+         haslo=request.getParameter("PasswordField");
          m.addAttribute("login", login);
           m.addAttribute("status", status);
          if (button1!= null)
@@ -36,7 +36,7 @@ public class RegisterController {
          {
              if(logInCheck())
              {
-                if(baza.registerNewAccount(new AccountDTO(login, MD5Hash.getmd5(password))))
+                if(baza.registerNewAccount(new KontoDTO(login, MD5Hash.getmd5(haslo))))
                 {
                     komunikat="Rejestracja udana. Mozesz terz dokonac logowania.";
                 }else

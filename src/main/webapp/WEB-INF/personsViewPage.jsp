@@ -1,5 +1,4 @@
-<%@page import="com.cookbook.DTO.PersonDTO"%>
-<jsp:useBean id="personService" type="com.cookbook.Service.PersonService" scope="request" />
+
 
 
 
@@ -18,11 +17,11 @@
             <tr>
                 <td>Persons List</td>   
             </tr>
-            <% for (PersonDTO p : personService.usersList()) {%>
+            <% for (int i=0;i<10;i++) {%>
             <tr>
-                <td> <%=  p.getPersonId()%></td>
-                <td> <%=  p.getFirstname() %></td>
-                 <td> <%=  p.getSurname()%></td>
+                <td> <%=  1%></td>
+                <td> <%=  2 %></td>
+                 <td> <%=  3%></td>
             </tr>
             <% }%>
         </table>
