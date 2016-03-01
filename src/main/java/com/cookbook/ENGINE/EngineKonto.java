@@ -14,8 +14,8 @@ public class EngineKonto extends Konto {
     public EngineKonto() {
     }
 
-    public EngineKonto(String login, String password) {
-        super(login, password);
+    public EngineKonto(String login, String haslo) {
+        super(login, haslo);
     }
 
     @Override

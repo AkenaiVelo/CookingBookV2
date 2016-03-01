@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     <class>com.cookbook.Engine.EngineKonto</class>
     <class>com.cookbook.POJO.Konto</class>
+    <class>com.cookbook.POJO.Komentarz</class>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>

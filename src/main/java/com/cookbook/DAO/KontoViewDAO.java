@@ -1,7 +1,6 @@
 package com.cookbook.DAO;
 
 import com.cookbook.ENGINE.EngineKonto;
-import com.cookbook.POJO.Konto;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -21,7 +20,6 @@ public class KontoViewDAO {
     }
 
     public List<EngineKonto> findAllAccounts() {
-        List<Konto> all;
         List<EngineKonto> all2 = new ArrayList<>();
         Query query = em.createQuery("SELECT p FROM EngineKonto p");
         all2 = query.getResultList();
@@ -47,4 +45,6 @@ public class KontoViewDAO {
     {
         return em.find(EngineKonto.class, login);
     }
+    
+   
 }

@@ -36,7 +36,7 @@ public class RegisterController {
          {
              if(logInCheck())
              {
-                if(baza.registerNewAccount(new KontoDTO(login, MD5Hash.getmd5(haslo))))
+                if(baza.registerNewAccount(new KontoDTO(login, MD5Hash.getmd5(haslo),"email",0)))
                 {
                     komunikat="Rejestracja udana. Mozesz terz dokonac logowania.";
                 }else
