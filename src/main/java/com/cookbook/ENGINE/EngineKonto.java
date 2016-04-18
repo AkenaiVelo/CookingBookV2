@@ -12,6 +12,7 @@ import javax.persistence.Table;
 public class EngineKonto extends Konto {
 
     public EngineKonto() {
+        super();
     }
 
     public EngineKonto(String login, String haslo) {
@@ -20,10 +21,10 @@ public class EngineKonto extends Konto {
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Konto)) {
+        if (!(object instanceof EngineKonto)) {
             return false;
         }
-        Konto other = (Konto) object;
+        EngineKonto other = (EngineKonto) object;
         return !((!this.getLogin().equals(other.getLogin())) || (!this.getHaslo().equals(other.getHaslo())));
     }
     

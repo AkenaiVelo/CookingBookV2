@@ -16,7 +16,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class Komentarz implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 2L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_KOMENTARZ")
@@ -25,10 +25,10 @@ public class Komentarz implements Serializable {
     private Date dataWystawienia;
     @Column(name = "OPIS")
     private String opis;
-    
     @ManyToOne(targetEntity = EngineKonto.class)
     @JoinColumn(name="AUTOR")
     private EngineKonto autor;
+
 
     public Komentarz() {
     }
@@ -85,7 +85,7 @@ public class Komentarz implements Serializable {
             return false;
         }
         Komentarz other = (Komentarz) object;
-        if ((this.idKomentarz == null && other.idKomentarz != null) || (this.idKomentarz != null && !this.idKomentarz.equals(other.idKomentarz))) {
+        if (this.idKomentarz == null && other.idKomentarz != null ) {
             return false;
         }
         return true;

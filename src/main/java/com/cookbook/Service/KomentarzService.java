@@ -16,7 +16,7 @@ public class KomentarzService {
     public KomentarzService() {
     }
     
-    public ArrayList<KomentarzDTO> getUsersList(String login) {
+    public ArrayList<KomentarzDTO> getUserCommentsList(String login) {
         ArrayList<KomentarzDTO> result = new ArrayList<>();
         for (EngineKomentarz e : komentarz_view_dao.findAllCommentsByLogin(login)) {
             result.add(new KomentarzDTO(e));

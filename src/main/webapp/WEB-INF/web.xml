@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
     <servlet>
+        
         <servlet-name>spring</servlet-name>
         <servlet-class>
             org.springframework.web.servlet.DispatcherServlet
@@ -12,7 +13,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>*.html</url-pattern>
+        <url-pattern>/Pages/*</url-pattern>
     </servlet-mapping>
     <filter>
         <filter-name>sitemesh</filter-name>

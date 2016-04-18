@@ -1,8 +1,8 @@
 package com.cookbook.POJO;
 
+import com.cookbook.ENGINE.EngineDanie;
 import com.cookbook.ENGINE.EngineKomentarz;
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
@@ -27,6 +27,9 @@ public class Konto implements Serializable {
     @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineKomentarz.class)
     @JoinColumn(name="AUTOR", referencedColumnName="LOGIN")
     private List<EngineKomentarz> komentarze;
+    @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineDanie.class)
+    @JoinColumn(name="AUTOR", referencedColumnName="LOGIN")
+    private List<EngineDanie> dania;
   
     public Konto() {
     }   
@@ -65,13 +68,22 @@ public class Konto implements Serializable {
         this.poziom = poziom;
     }
 
-    public List<EngineKomentarz> getAddressList() {
+    public List<EngineKomentarz> getKomentarze() {
         return komentarze;
     }
 
-    public void setAddressList(List<EngineKomentarz> komentarze) {
+    public void setKomentarze(List<EngineKomentarz> komentarze) {
         this.komentarze = komentarze;
     }
+
+    public List<EngineDanie> getDania() {
+        return dania;
+    }
+
+    public void setDania(List<EngineDanie> dania) {
+        this.dania = dania;
+    }
+    
 
      @Override
     public String toString() {

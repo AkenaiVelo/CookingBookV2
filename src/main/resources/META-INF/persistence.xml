@@ -2,9 +2,15 @@
 <persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="example-unit" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
-    <class>com.cookbook.Engine.EngineKonto</class>
+ 
     <class>com.cookbook.POJO.Konto</class>
     <class>com.cookbook.POJO.Komentarz</class>
+    <class>com.cookbook.POJO.Danie</class>
+    <class>com.cookbook.POJO.GaleriaDan</class>
+    <class>com.cookbook.POJO.KategoriaDan</class>
+    <class>com.cookbook.POJO.Skladniki</class>
+    <class>com.cookbook.POJO.SkladnikiDania</class>
+  
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
