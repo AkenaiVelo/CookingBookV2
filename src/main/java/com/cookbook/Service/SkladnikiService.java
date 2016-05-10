@@ -27,4 +27,17 @@ public class SkladnikiService {
     {
         return skladniki_dao.getIlosc(idDania, nazwaSkladnika);
     }
+    private int getIloscByName(String nazwaDania,String nazwaSkladnika)
+    {
+        return skladniki_dao.getIloscbyName(nazwaDania, nazwaSkladnika);
+    }
+    
+    public ArrayList<SkladnikiDTO> findIngredientsOfMeal(String name)
+    {
+        ArrayList<SkladnikiDTO> result = new ArrayList<>();
+        for (EngineSkladniki e : skladniki_dao.findAllIngredientsOfMeal(name)) {
+            result.add(new SkladnikiDTO(e,getIloscByName(name, e.getNazwa())));
+        }
+        return result;
+    }
 }

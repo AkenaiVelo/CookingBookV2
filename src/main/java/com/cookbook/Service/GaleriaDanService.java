@@ -22,4 +22,12 @@ public class GaleriaDanService {
         }
         return result;
     }
+    
+     public ArrayList<GaleriaDanDTO> galeriaDaniaByName(String name) {
+        ArrayList<GaleriaDanDTO> result = new ArrayList<>();
+        for (EngineGaleriaDan e : galeria_dao.ZdjeciaDaniaByName(name)) {
+            result.add(new GaleriaDanDTO(e));
+        }
+        return result;
+    }
 }

@@ -31,4 +31,11 @@ public class DanieDAO {
         return all2;
     }
     
+    public EngineDanie findDanieByName(String name)
+    {
+        Query query = em.createQuery("SELECT p FROM EngineDanie p WHERE p.nazwa LIKE :param1")
+                .setParameter("param1",name);
+        return (EngineDanie)query.getResultList().get(0);
+    }
+    
 }

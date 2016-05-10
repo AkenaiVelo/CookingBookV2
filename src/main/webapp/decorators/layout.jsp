@@ -11,6 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Cooking Book</title>
         <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/decorators/css/style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> 
+        <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> 
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> 
     </head>
     <body>	
 
@@ -33,7 +36,7 @@
             <div id="login">
                 <%if ((session.getAttribute("login") == null) || (session.getAttribute("login") == "")) {%>
                 <div id="loginIn">
-                    <h3>Zaloguj sie:</h3>
+                    Zaloguj sie:
                     <form method="post" action="${link}/Pages/login">
                         <input type="text" name="login" placeholder="login" style="width: 100px;" />
                         </br>                                                

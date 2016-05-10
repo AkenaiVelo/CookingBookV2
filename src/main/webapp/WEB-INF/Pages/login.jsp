@@ -18,6 +18,7 @@
             if (!kontoService.checkLogin(login)) {
                 if (kontoService.CheckPassword(login, password)) {
                     session.setAttribute("login", login);
+                    session.setAttribute("poziom", kontoService.getAcountLevel(login));
                     response.sendRedirect("index.jsp");
                     //request.getRequestDispatcher("login.jsp").forward(request, response);
                 } else {

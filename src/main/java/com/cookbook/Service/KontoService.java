@@ -43,4 +43,10 @@ public class KontoService {
         }
         return false;
     }
+    
+    public int getAcountLevel(String login)
+    {
+        EngineKonto e=account_view_dao.getAccountByLogin(login);
+        return e.getPoziom();
+    }
 }

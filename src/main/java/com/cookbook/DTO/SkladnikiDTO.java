@@ -8,6 +8,7 @@ public class SkladnikiDTO {
     private String opis;
     private String zdjecie;
     private String jednostka;
+    private int ilosc;//opcjonalnie do przepisów
 
     public SkladnikiDTO() {
     }
@@ -17,6 +18,15 @@ public class SkladnikiDTO {
         this.opis = e.getOpis();
         this.zdjecie = e.getZdjecie();
         this.jednostka = e.getJednostka();
+        ilosc=0;
+    }
+    
+    public SkladnikiDTO(EngineSkladniki e, int ilosc) {
+        this.nazwa = e.getNazwa();
+        this.opis = e.getOpis();
+        this.zdjecie = e.getZdjecie();
+        this.jednostka = e.getJednostka();
+        this.ilosc=ilosc;
     }
 
     public SkladnikiDTO(String nazwa, String opis, String zdjecie, String jednostka) {
@@ -24,7 +34,18 @@ public class SkladnikiDTO {
         this.opis = opis;
         this.zdjecie = zdjecie;
         this.jednostka = jednostka;
+        ilosc=0;
     }
+
+    public SkladnikiDTO(String nazwa, String opis, String zdjecie, String jednostka, int ilosc) {
+        this.nazwa = nazwa;
+        this.opis = opis;
+        this.zdjecie = zdjecie;
+        this.jednostka = jednostka;
+        this.ilosc = ilosc;
+    }
+    
+    
 
     public String getNazwa() {
         return nazwa;
@@ -56,6 +77,14 @@ public class SkladnikiDTO {
 
     public void setJednostka(String jednostka) {
         this.jednostka = jednostka;
+    }
+
+    public int getIlosc() {
+        return ilosc;
+    }
+
+    public void setIlosc(int ilosc) {
+        this.ilosc = ilosc;
     }
 
     @Override

@@ -109,6 +109,14 @@ public class Danie implements Serializable{
     public void setKategoria(EngineKategoriaDan kategoria) {
         this.kategoria = kategoria;
     }
+
+    public List<EngineSkladnikiDania> getSkladnikiDania() {
+        return skladnikiDania;
+    }
+
+    public void setSkladnikiDania(List<EngineSkladnikiDania> skladnikiDania) {
+        this.skladnikiDania = skladnikiDania;
+    }
     
     
     

@@ -31,5 +31,10 @@ public class DanieService {
         }
         return result;
     }
+    
+    public DanieDTO findDanieByName(String name)
+    {
+        return new DanieDTO(danie_dao.findDanieByName(name));
+    }
 
 }
