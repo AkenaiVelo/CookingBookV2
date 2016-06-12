@@ -19,6 +19,12 @@ public class EngineKonto extends Konto {
         super(login, haslo);
     }
 
+    public EngineKonto(String login, String haslo, String email, int poziom) {
+        super(login, haslo, email, poziom);
+    }
+    
+    
+
     @Override
     public boolean equals(Object object) {
         if (!(object instanceof EngineKonto)) {

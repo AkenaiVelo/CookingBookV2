@@ -16,6 +16,7 @@
         for(DanieDTO d:danieService.findAllDaniaByKategoria(k))
         {
             %>
+            <br/>
             <a href="${link}/Pages/przepisy/<%=k%>/<%=d.getNazwa()%>"><%=d.getNazwa()%></a>
         <%
         }

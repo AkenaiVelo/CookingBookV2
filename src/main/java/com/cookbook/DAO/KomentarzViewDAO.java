@@ -22,4 +22,12 @@ public class KomentarzViewDAO {
         all2 = query.getResultList();
         return all2;
     }
+    
+    public List<EngineKomentarz> findAllCommentsByDanie(String nazwa) {
+        List<EngineKomentarz> all2 ;
+        Query query = em.createQuery("SELECT p FROM EngineKomentarz p WHERE p.idDania.nazwa LIKE :param1 ORDER BY p.idKomentarz")
+                .setParameter("param1",nazwa);
+        all2 = query.getResultList();
+        return all2;
+    }
 }

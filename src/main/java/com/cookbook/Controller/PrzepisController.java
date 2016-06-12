@@ -7,6 +7,8 @@ package com.cookbook.Controller;
 
 import com.cookbook.Service.DanieService;
 import com.cookbook.Service.GaleriaDanService;
+import com.cookbook.Service.KomentarzService;
+import com.cookbook.Service.OcenaService;
 import com.cookbook.Service.SkladnikiService;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,10 @@ public class PrzepisController {
     private SkladnikiService skladnikiService;
     @Autowired
     private GaleriaDanService galeriaDanService;
+    @Autowired
+    private KomentarzService komentarzService;
+    @Autowired
+    private OcenaService ocenaService;
     
     @RequestMapping(value = "/przepisy/{kat}/{nazwa}")
     public String index(@PathVariable String kat,@PathVariable String nazwa, HttpServletRequest request, Model m) {
@@ -35,6 +41,8 @@ public class PrzepisController {
         m.addAttribute("danieService", danieService);
         m.addAttribute("skladnikiService", skladnikiService);
         m.addAttribute("galeriaDanService", galeriaDanService);
+        m.addAttribute("komentarzService", komentarzService);
+        m.addAttribute("ocenaService", ocenaService);
         return "przepis";
     }
 }

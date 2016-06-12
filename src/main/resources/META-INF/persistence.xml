@@ -10,6 +10,7 @@
     <class>com.cookbook.POJO.KategoriaDan</class>
     <class>com.cookbook.POJO.Skladniki</class>
     <class>com.cookbook.POJO.SkladnikiDania</class>
+    <class>com.cookbook.POJO.Ocena</class>
   
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect"/>
@@ -18,6 +19,8 @@
       <property name="javax.persistence.jdbc.user" value="app"/>
       <property name="javax.persistence.jdbc.password" value="app"/>
       <property name="hibernate.defaultschema" value="HIBER"/>
+      <property name="hibernate.connection.useUnicode" value="true" />
+      <property name="hibernate.connection.characterEncoding" value="UTF-8" />
     </properties>
   </persistence-unit>
 </persistence>

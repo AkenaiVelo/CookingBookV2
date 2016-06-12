@@ -40,4 +40,23 @@ public class SkladnikiService {
         }
         return result;
     }
+    
+    public ArrayList<SkladnikiDTO> findIngredientsOfMeal2(String name)
+    {
+        ArrayList<SkladnikiDTO> result = new ArrayList<>();
+        for (EngineSkladniki e : skladniki_dao.findAllIngredientsOfMeal2(name)) {
+            result.add(new SkladnikiDTO(e,getIloscByName(name, e.getNazwa())));
+        }
+        return result;
+    }
+    
+    public void deleteSkladnikByName(String nazwa)
+    {
+        skladniki_dao.deleteSkladnikByName(nazwa);
+    }
+    
+    public SkladnikiDTO findSkladnikByName(String nazwa)
+    {
+        return new SkladnikiDTO(skladniki_dao.findSkladnikByName(nazwa));
+    }
 }

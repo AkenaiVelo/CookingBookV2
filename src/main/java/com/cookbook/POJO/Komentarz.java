@@ -1,6 +1,7 @@
 
 package com.cookbook.POJO;
 
+import com.cookbook.ENGINE.EngineDanie;
 import com.cookbook.ENGINE.EngineKonto;
 import java.io.Serializable;
 import java.util.Date;
@@ -28,6 +29,9 @@ public class Komentarz implements Serializable {
     @ManyToOne(targetEntity = EngineKonto.class)
     @JoinColumn(name="AUTOR")
     private EngineKonto autor;
+    @ManyToOne(targetEntity = EngineDanie.class)
+    @JoinColumn(name="ID_DANIA")
+    private EngineDanie idDania;
 
 
     public Komentarz() {
@@ -38,6 +42,15 @@ public class Komentarz implements Serializable {
         this.opis = opis;
         this.autor = autor;
     }
+    
+     public Komentarz( Date dataWystawienia, String opis, EngineKonto autor, EngineDanie idDania) {
+        this.dataWystawienia = dataWystawienia;
+        this.opis = opis;
+        this.autor = autor;
+        this.idDania = idDania;
+    }
+    
+    
 
     public Integer getIdKomentarz() {
         return idKomentarz;
@@ -69,6 +82,14 @@ public class Komentarz implements Serializable {
 
     public void setAutor(EngineKonto autor) {
         this.autor = autor;
+    }
+
+    public EngineDanie getIdDania() {
+        return idDania;
+    }
+
+    public void setIdDania(EngineDanie idDania) {
+        this.idDania = idDania;
     }
 
     @Override

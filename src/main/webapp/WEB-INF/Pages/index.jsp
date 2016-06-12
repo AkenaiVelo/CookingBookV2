@@ -1,3 +1,8 @@
+<%@page import="com.cookbook.ENGINE.EngineOcena"%>
+<%@page import="java.lang.reflect.Method"%>
+<%@page import="java.net.URLClassLoader"%>
+<%@page import="java.net.URL"%>
+<%@page import="java.io.File"%>
 <%@page import="com.cookbook.DTO.GaleriaDanDTO"%>
 <%@page import="com.cookbook.DTO.DanieDTO"%>
 <%@page import="com.cookbook.DTO.KomentarzDTO"%>
@@ -9,6 +14,7 @@
 <jsp:useBean id="danieService" type="com.cookbook.Service.DanieService" scope="request" />
 <jsp:useBean id="galeriaService" type="com.cookbook.Service.GaleriaDanService" scope="request" />
 <jsp:useBean id="skladnikiService" type="com.cookbook.Service.SkladnikiService" scope="request" />
+<jsp:useBean id="ocenki" type="com.cookbook.DAO.OcenaDAO" scope="request" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,6 +53,14 @@
             <% }%>
         </ol>
         <%= skladnikiService.getilosc(2, "Cebula")%>
+        <ol>
+            <%for (EngineOcena e : ocenki.findAllOceny()) {%>
+            <li>
+              
+                <%=e%>  
+            </li>
+            <% }%>
+        </ol>
         <hr />
     </body>
 </html>

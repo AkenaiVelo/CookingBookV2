@@ -20,6 +20,11 @@ public class EngineKomentarz extends Komentarz {
         super(dataWystawienia, opis, autor);
     }
 
+    public EngineKomentarz(Date dataWystawienia, String opis, EngineKonto autor, EngineDanie idDania) {
+        super(dataWystawienia, opis, autor, idDania);
+    }
+    
+
 
     @Override
     public int hashCode()//hashcode po pierwszej literce loginu

@@ -30,6 +30,7 @@
                     <li><a href="${link}/Pages/przepisy/<%=a.getNazwa()%>"><%=a.getNazwa()%></a></li>
                     <%}%>
                     <li><a href="${link}/Pages/skladniki">Tabela Składników</a></li>
+                    <li><a href="${link}/Pages/ranking">Ranking</a></li>
                 </ul>
             </div>
 

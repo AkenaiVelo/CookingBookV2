@@ -33,9 +33,17 @@ public class DanieDAO {
     
     public EngineDanie findDanieByName(String name)
     {
+        System.out.println("SELECT p FROM EngineDanie p WHERE p.nazwa LIKE "+name);
         Query query = em.createQuery("SELECT p FROM EngineDanie p WHERE p.nazwa LIKE :param1")
                 .setParameter("param1",name);
         return (EngineDanie)query.getResultList().get(0);
+    }
+    
+    public List<EngineDanie> findAllDania() {
+        List<EngineDanie> all2 ;
+        Query query = em.createQuery("SELECT d FROM EngineDanie d");
+        all2 = query.getResultList();
+        return all2;
     }
     
 }

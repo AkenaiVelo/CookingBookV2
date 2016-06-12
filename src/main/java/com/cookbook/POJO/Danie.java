@@ -2,6 +2,7 @@ package com.cookbook.POJO;
 
 import com.cookbook.ENGINE.EngineKategoriaDan;
 import com.cookbook.ENGINE.EngineKonto;
+import com.cookbook.ENGINE.EngineOcena;
 import com.cookbook.ENGINE.EngineSkladnikiDania;
 import java.io.Serializable;
 import java.util.Date;
@@ -40,6 +41,9 @@ public class Danie implements Serializable{
     @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineSkladnikiDania.class)
     @JoinColumn(name="IDDANIA", referencedColumnName="ID_DANIA")
     private List<EngineSkladnikiDania> skladnikiDania;
+    @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineOcena.class)
+    @JoinColumn(name="IdDania", referencedColumnName="ID_Dania")
+    private List<EngineOcena> oceny;
 
     public Danie() {
     }
@@ -117,9 +121,15 @@ public class Danie implements Serializable{
     public void setSkladnikiDania(List<EngineSkladnikiDania> skladnikiDania) {
         this.skladnikiDania = skladnikiDania;
     }
-    
-    
-    
+
+    public List<EngineOcena> getOceny() {
+        return oceny;
+    }
+
+    public void setOceny(List<EngineOcena> oceny) {
+        this.oceny = oceny;
+    }
+  
      @Override
     public int hashCode()//hashcode po pierwszej literce loginu
     {

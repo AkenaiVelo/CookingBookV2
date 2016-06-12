@@ -10,8 +10,8 @@ import javax.persistence.Table;
 @Table(name = "HIBER.SKLADNIKI")
 public class EngineSkladniki extends Skladniki{
 
-    public EngineSkladniki(String nazwa, String opis, String zdjecia) {
-        super(nazwa, opis, zdjecia);
+    public EngineSkladniki(String nazwa, String opis, String zdjecia,String jednostka) {
+        super(nazwa, opis, zdjecia,jednostka);
     }
 
     public EngineSkladniki() {

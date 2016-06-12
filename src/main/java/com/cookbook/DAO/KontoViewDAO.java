@@ -46,5 +46,13 @@ public class KontoViewDAO {
         return em.find(EngineKonto.class, login);
     }
     
+    public boolean isEmailValid(String s)
+    {
+        List<EngineKonto> all2 ;
+        Query query = em.createQuery("SELECT p FROM EngineKonto p WHERE p.email LIKE :param").setParameter("param", s);
+        all2 = query.getResultList();
+        return all2.isEmpty();
+    }
+    
    
 }

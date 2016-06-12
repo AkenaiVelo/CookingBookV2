@@ -23,7 +23,6 @@ public class PrzepisyController {
 
     @RequestMapping(value = "/przepisy/{kat}")
     public String index(@PathVariable String kat, HttpServletRequest request, Model m) {
-        System.out.println("Przepisy Controler " + kat);
         layout.addServices(m);
         m.addAttribute("kat", kat);
         m.addAttribute("danieService", danieService);

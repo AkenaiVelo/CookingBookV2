@@ -3,6 +3,7 @@ package com.cookbook.POJO;
 import com.cookbook.ENGINE.EngineSkladnikiDania;
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -20,16 +21,17 @@ public class Skladniki implements Serializable{
     private String opis;
     @Column(name = "ZDJECIE")
     private String zdjecie;
-    @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineSkladnikiDania.class)
+    @OneToMany( fetch = FetchType.EAGER, targetEntity = EngineSkladnikiDania.class,cascade = CascadeType.ALL)
     @JoinColumn(name="NAZWASKLADNIKA", referencedColumnName="NAZWA")
     private List<EngineSkladnikiDania> skladnikiDania;
     @Column(name = "JEDNOSTKA")
     private String jednostka;
 
-    public Skladniki(String nazwa, String opis, String zdjecia) {
+    public Skladniki(String nazwa, String opis, String zdjecia,String jednostka) {
         this.nazwa = nazwa;
         this.opis = opis;
         this.zdjecie = zdjecia;
+        this.jednostka=jednostka;
     }
 
     public Skladniki() {
